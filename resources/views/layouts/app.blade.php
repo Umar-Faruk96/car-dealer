@@ -1,9 +1,13 @@
-@extends('layouts.main')
+@props(['pageTitle' => ''])
 
-@section('main-content')
-    @include('layouts.partials.header')
+<x-base-layout :$pageTitle>
+    <x-partials.header />
 
-    @yield('app-content')
+    {{ $slot }}
 
-    <footer></footer>
-@endsection
+    <footer>
+        <a href="#">Link 1</a>
+        <a href="#">Link 2</a>
+        {{ $footerLinks ?? '' }}
+    </footer>
+</x-base-layout>

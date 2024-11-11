@@ -1,8 +1,4 @@
-@extends('layouts.app')
-
-@section('title', 'Home Page')
-
-@section('app-content')
+<x-app-layout pageTitle="Home">
     <!-- Home Slider -->
     <section class="hero-slider">
         <!-- Carousel wrapper -->
@@ -12,7 +8,7 @@
                 <div class="container">
                     <div class="slide-content">
                         <h1 class="hero-slider-title">
-                            Buy <strong>The Best Cars</strong> <br/>
+                            Buy <strong>The Best Cars</strong> <br />
                             in your region
                         </h1>
                         <div class="hero-slider-content">
@@ -26,7 +22,7 @@
                         </div>
                     </div>
                     <div class="slide-image">
-                        <img src="/img/car-png-39071.png" alt="" class="img-responsive"/>
+                        <img src="/img/car-png-39071.png" alt="" class="img-responsive" />
                     </div>
                 </div>
             </div>
@@ -35,7 +31,7 @@
                 <div class="flex container">
                     <div class="slide-content">
                         <h2 class="hero-slider-title">
-                            Do you want to <br/>
+                            Do you want to <br />
                             <strong>sell your car?</strong>
                         </h2>
                         <div class="hero-slider-content">
@@ -48,7 +44,7 @@
                         </div>
                     </div>
                     <div class="slide-image">
-                        <img src="/img/car-png-39071.png" alt="" class="img-responsive"/>
+                        <img src="/img/car-png-39071.png" alt="" class="img-responsive" />
                     </div>
                 </div>
             </div>
@@ -401,16 +397,16 @@
                             </select>
                         </div>
                         <div>
-                            <input type="number" placeholder="Year From" name="year_from"/>
+                            <input type="number" placeholder="Year From" name="year_from" />
                         </div>
                         <div>
-                            <input type="number" placeholder="Year To" name="year_to"/>
+                            <input type="number" placeholder="Year To" name="year_to" />
                         </div>
                         <div>
-                            <input type="number" placeholder="Price From" name="price_from"/>
+                            <input type="number" placeholder="Price From" name="price_from" />
                         </div>
                         <div>
-                            <input type="number" placeholder="Price To" name="price_to"/>
+                            <input type="number" placeholder="Price To" name="price_to" />
                         </div>
                         <div>
                             <select name="fuel_type_id">
@@ -442,7 +438,7 @@
                 <div class="car-items-listing">
                     <div class="car-item card">
                         <a href="/view.html">
-                            <img src="/img/cars/Lexus-RX200t-2016/1.jpeg" alt="" class="car-item-img rounded-t"/>
+                            <img src="/img/cars/Lexus-RX200t-2016/1.jpeg" alt="" class="car-item-img rounded-t" />
                         </a>
                         <div class="p-medium">
                             <div class="flex items-center justify-between">
@@ -452,13 +448,13 @@
                                          stroke-width="1.5"
                                          stroke="currentColor" style="width: 20px">
                                         <path stroke-linecap="round" stroke-linejoin="round"
-                                              d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z"/>
+                                              d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
                                     </svg>
                                 </button>
                             </div>
                             <h2 class="car-item-title">2016 - Lexus RX200t</h2>
                             <p class="car-item-price">$25,000</p>
-                            <hr/>
+                            <hr />
                             <p class="m-0">
                                 <span class="car-item-badge">SUV</span>
                                 <span class="car-item-badge">Electric</span>
@@ -467,7 +463,7 @@
                     </div>
                     <div class="car-item card">
                         <a href="/view.html">
-                            <img src="/img/cars/Lexus-RX200t-2016/1.jpeg" alt="" class="car-item-img rounded-t"/>
+                            <img src="/img/cars/Lexus-RX200t-2016/1.jpeg" alt="" class="car-item-img rounded-t" />
                         </a>
                         <div class="p-medium">
                             <div class="flex items-center justify-between">
@@ -477,13 +473,13 @@
                                          stroke-width="1.5"
                                          stroke="currentColor" style="width: 20px">
                                         <path stroke-linecap="round" stroke-linejoin="round"
-                                              d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z"/>
+                                              d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
                                     </svg>
                                 </button>
                             </div>
                             <h2 class="car-item-title">2016 - Lexus RX200t</h2>
                             <p class="car-item-price">$25,000</p>
-                            <hr/>
+                            <hr />
                             <p class="m-0">
                                 <span class="car-item-badge">SUV</span>
                                 <span class="car-item-badge">Electric</span>
@@ -492,7 +488,7 @@
                     </div>
                     <div class="car-item card">
                         <a href="/view.html">
-                            <img src="/img/cars/Lexus-RX200t-2016/1.jpeg" alt="" class="car-item-img rounded-t"/>
+                            <img src="/img/cars/Lexus-RX200t-2016/1.jpeg" alt="" class="car-item-img rounded-t" />
                         </a>
                         <div class="p-medium">
                             <div class="flex items-center justify-between">
@@ -502,13 +498,13 @@
                                          stroke-width="1.5"
                                          stroke="currentColor" style="width: 20px">
                                         <path stroke-linecap="round" stroke-linejoin="round"
-                                              d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z"/>
+                                              d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
                                     </svg>
                                 </button>
                             </div>
                             <h2 class="car-item-title">2016 - Lexus RX200t</h2>
                             <p class="car-item-price">$25,000</p>
-                            <hr/>
+                            <hr />
                             <p class="m-0">
                                 <span class="car-item-badge">SUV</span>
                                 <span class="car-item-badge">Electric</span>
@@ -517,7 +513,7 @@
                     </div>
                     <div class="car-item card">
                         <a href="/view.html">
-                            <img src="/img/cars/Lexus-RX200t-2016/1.jpeg" alt="" class="car-item-img rounded-t"/>
+                            <img src="/img/cars/Lexus-RX200t-2016/1.jpeg" alt="" class="car-item-img rounded-t" />
                         </a>
                         <div class="p-medium">
                             <div class="flex items-center justify-between">
@@ -527,13 +523,13 @@
                                          stroke-width="1.5"
                                          stroke="currentColor" style="width: 20px">
                                         <path stroke-linecap="round" stroke-linejoin="round"
-                                              d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z"/>
+                                              d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
                                     </svg>
                                 </button>
                             </div>
                             <h2 class="car-item-title">2016 - Lexus RX200t</h2>
                             <p class="car-item-price">$25,000</p>
-                            <hr/>
+                            <hr />
                             <p class="m-0">
                                 <span class="car-item-badge">SUV</span>
                                 <span class="car-item-badge">Electric</span>
@@ -542,7 +538,7 @@
                     </div>
                     <div class="car-item card">
                         <a href="/view.html">
-                            <img src="/img/cars/Lexus-RX200t-2016/1.jpeg" alt="" class="car-item-img rounded-t"/>
+                            <img src="/img/cars/Lexus-RX200t-2016/1.jpeg" alt="" class="car-item-img rounded-t" />
                         </a>
                         <div class="p-medium">
                             <div class="flex items-center justify-between">
@@ -552,13 +548,13 @@
                                          stroke-width="1.5"
                                          stroke="currentColor" style="width: 20px">
                                         <path stroke-linecap="round" stroke-linejoin="round"
-                                              d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z"/>
+                                              d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
                                     </svg>
                                 </button>
                             </div>
                             <h2 class="car-item-title">2016 - Lexus RX200t</h2>
                             <p class="car-item-price">$25,000</p>
-                            <hr/>
+                            <hr />
                             <p class="m-0">
                                 <span class="car-item-badge">SUV</span>
                                 <span class="car-item-badge">Electric</span>
@@ -567,7 +563,7 @@
                     </div>
                     <div class="car-item card">
                         <a href="/view.html">
-                            <img src="/img/cars/Lexus-RX200t-2016/1.jpeg" alt="" class="car-item-img rounded-t"/>
+                            <img src="/img/cars/Lexus-RX200t-2016/1.jpeg" alt="" class="car-item-img rounded-t" />
                         </a>
                         <div class="p-medium">
                             <div class="flex items-center justify-between">
@@ -577,13 +573,13 @@
                                          stroke-width="1.5"
                                          stroke="currentColor" style="width: 20px">
                                         <path stroke-linecap="round" stroke-linejoin="round"
-                                              d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z"/>
+                                              d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
                                     </svg>
                                 </button>
                             </div>
                             <h2 class="car-item-title">2016 - Lexus RX200t</h2>
                             <p class="car-item-price">$25,000</p>
-                            <hr/>
+                            <hr />
                             <p class="m-0">
                                 <span class="car-item-badge">SUV</span>
                                 <span class="car-item-badge">Electric</span>
@@ -592,7 +588,7 @@
                     </div>
                     <div class="car-item card">
                         <a href="/view.html">
-                            <img src="/img/cars/Lexus-RX200t-2016/1.jpeg" alt="" class="car-item-img rounded-t"/>
+                            <img src="/img/cars/Lexus-RX200t-2016/1.jpeg" alt="" class="car-item-img rounded-t" />
                         </a>
                         <div class="p-medium">
                             <div class="flex items-center justify-between">
@@ -602,13 +598,13 @@
                                          stroke-width="1.5"
                                          stroke="currentColor" style="width: 20px">
                                         <path stroke-linecap="round" stroke-linejoin="round"
-                                              d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z"/>
+                                              d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
                                     </svg>
                                 </button>
                             </div>
                             <h2 class="car-item-title">2016 - Lexus RX200t</h2>
                             <p class="car-item-price">$25,000</p>
-                            <hr/>
+                            <hr />
                             <p class="m-0">
                                 <span class="car-item-badge">SUV</span>
                                 <span class="car-item-badge">Electric</span>
@@ -617,7 +613,7 @@
                     </div>
                     <div class="car-item card">
                         <a href="/view.html">
-                            <img src="/img/cars/Lexus-RX200t-2016/1.jpeg" alt="" class="car-item-img rounded-t"/>
+                            <img src="/img/cars/Lexus-RX200t-2016/1.jpeg" alt="" class="car-item-img rounded-t" />
                         </a>
                         <div class="p-medium">
                             <div class="flex items-center justify-between">
@@ -627,13 +623,13 @@
                                          stroke-width="1.5"
                                          stroke="currentColor" style="width: 20px">
                                         <path stroke-linecap="round" stroke-linejoin="round"
-                                              d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z"/>
+                                              d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
                                     </svg>
                                 </button>
                             </div>
                             <h2 class="car-item-title">2016 - Lexus RX200t</h2>
                             <p class="car-item-price">$25,000</p>
-                            <hr/>
+                            <hr />
                             <p class="m-0">
                                 <span class="car-item-badge">SUV</span>
                                 <span class="car-item-badge">Electric</span>
@@ -642,7 +638,7 @@
                     </div>
                     <div class="car-item card">
                         <a href="/view.html">
-                            <img src="/img/cars/Lexus-RX200t-2016/1.jpeg" alt="" class="car-item-img rounded-t"/>
+                            <img src="/img/cars/Lexus-RX200t-2016/1.jpeg" alt="" class="car-item-img rounded-t" />
                         </a>
                         <div class="p-medium">
                             <div class="flex items-center justify-between">
@@ -652,13 +648,13 @@
                                          stroke-width="1.5"
                                          stroke="currentColor" style="width: 20px">
                                         <path stroke-linecap="round" stroke-linejoin="round"
-                                              d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z"/>
+                                              d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
                                     </svg>
                                 </button>
                             </div>
                             <h2 class="car-item-title">2016 - Lexus RX200t</h2>
                             <p class="car-item-price">$25,000</p>
-                            <hr/>
+                            <hr />
                             <p class="m-0">
                                 <span class="car-item-badge">SUV</span>
                                 <span class="car-item-badge">Electric</span>
@@ -667,7 +663,7 @@
                     </div>
                     <div class="car-item card">
                         <a href="/view.html">
-                            <img src="/img/cars/Lexus-RX200t-2016/1.jpeg" alt="" class="car-item-img rounded-t"/>
+                            <img src="/img/cars/Lexus-RX200t-2016/1.jpeg" alt="" class="car-item-img rounded-t" />
                         </a>
                         <div class="p-medium">
                             <div class="flex items-center justify-between">
@@ -677,13 +673,13 @@
                                          stroke-width="1.5"
                                          stroke="currentColor" style="width: 20px">
                                         <path stroke-linecap="round" stroke-linejoin="round"
-                                              d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z"/>
+                                              d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
                                     </svg>
                                 </button>
                             </div>
                             <h2 class="car-item-title">2016 - Lexus RX200t</h2>
                             <p class="car-item-price">$25,000</p>
-                            <hr/>
+                            <hr />
                             <p class="m-0">
                                 <span class="car-item-badge">SUV</span>
                                 <span class="car-item-badge">Electric</span>
@@ -692,7 +688,7 @@
                     </div>
                     <div class="car-item card">
                         <a href="/view.html">
-                            <img src="/img/cars/Lexus-RX200t-2016/1.jpeg" alt="" class="car-item-img rounded-t"/>
+                            <img src="/img/cars/Lexus-RX200t-2016/1.jpeg" alt="" class="car-item-img rounded-t" />
                         </a>
                         <div class="p-medium">
                             <div class="flex items-center justify-between">
@@ -702,13 +698,13 @@
                                          stroke-width="1.5"
                                          stroke="currentColor" style="width: 20px">
                                         <path stroke-linecap="round" stroke-linejoin="round"
-                                              d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z"/>
+                                              d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
                                     </svg>
                                 </button>
                             </div>
                             <h2 class="car-item-title">2016 - Lexus RX200t</h2>
                             <p class="car-item-price">$25,000</p>
-                            <hr/>
+                            <hr />
                             <p class="m-0">
                                 <span class="car-item-badge">SUV</span>
                                 <span class="car-item-badge">Electric</span>
@@ -717,7 +713,7 @@
                     </div>
                     <div class="car-item card">
                         <a href="/view.html">
-                            <img src="/img/cars/Lexus-RX200t-2016/1.jpeg" alt="" class="car-item-img rounded-t"/>
+                            <img src="/img/cars/Lexus-RX200t-2016/1.jpeg" alt="" class="car-item-img rounded-t" />
                         </a>
                         <div class="p-medium">
                             <div class="flex items-center justify-between">
@@ -727,13 +723,13 @@
                                          stroke-width="1.5"
                                          stroke="currentColor" style="width: 20px">
                                         <path stroke-linecap="round" stroke-linejoin="round"
-                                              d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z"/>
+                                              d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
                                     </svg>
                                 </button>
                             </div>
                             <h2 class="car-item-title">2016 - Lexus RX200t</h2>
                             <p class="car-item-price">$25,000</p>
-                            <hr/>
+                            <hr />
                             <p class="m-0">
                                 <span class="car-item-badge">SUV</span>
                                 <span class="car-item-badge">Electric</span>
@@ -742,7 +738,7 @@
                     </div>
                     <div class="car-item card">
                         <a href="/view.html">
-                            <img src="/img/cars/Lexus-RX200t-2016/1.jpeg" alt="" class="car-item-img rounded-t"/>
+                            <img src="/img/cars/Lexus-RX200t-2016/1.jpeg" alt="" class="car-item-img rounded-t" />
                         </a>
                         <div class="p-medium">
                             <div class="flex items-center justify-between">
@@ -752,13 +748,13 @@
                                          stroke-width="1.5"
                                          stroke="currentColor" style="width: 20px">
                                         <path stroke-linecap="round" stroke-linejoin="round"
-                                              d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z"/>
+                                              d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
                                     </svg>
                                 </button>
                             </div>
                             <h2 class="car-item-title">2016 - Lexus RX200t</h2>
                             <p class="car-item-price">$25,000</p>
-                            <hr/>
+                            <hr />
                             <p class="m-0">
                                 <span class="car-item-badge">SUV</span>
                                 <span class="car-item-badge">Electric</span>
@@ -767,7 +763,7 @@
                     </div>
                     <div class="car-item card">
                         <a href="/view.html">
-                            <img src="/img/cars/Lexus-RX200t-2016/1.jpeg" alt="" class="car-item-img rounded-t"/>
+                            <img src="/img/cars/Lexus-RX200t-2016/1.jpeg" alt="" class="car-item-img rounded-t" />
                         </a>
                         <div class="p-medium">
                             <div class="flex items-center justify-between">
@@ -777,13 +773,13 @@
                                          stroke-width="1.5"
                                          stroke="currentColor" style="width: 20px">
                                         <path stroke-linecap="round" stroke-linejoin="round"
-                                              d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z"/>
+                                              d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
                                     </svg>
                                 </button>
                             </div>
                             <h2 class="car-item-title">2016 - Lexus RX200t</h2>
                             <p class="car-item-price">$25,000</p>
-                            <hr/>
+                            <hr />
                             <p class="m-0">
                                 <span class="car-item-badge">SUV</span>
                                 <span class="car-item-badge">Electric</span>
@@ -792,7 +788,7 @@
                     </div>
                     <div class="car-item card">
                         <a href="/view.html">
-                            <img src="/img/cars/Lexus-RX200t-2016/1.jpeg" alt="" class="car-item-img rounded-t"/>
+                            <img src="/img/cars/Lexus-RX200t-2016/1.jpeg" alt="" class="car-item-img rounded-t" />
                         </a>
                         <div class="p-medium">
                             <div class="flex items-center justify-between">
@@ -802,13 +798,13 @@
                                          stroke-width="1.5"
                                          stroke="currentColor" style="width: 20px">
                                         <path stroke-linecap="round" stroke-linejoin="round"
-                                              d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z"/>
+                                              d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
                                     </svg>
                                 </button>
                             </div>
                             <h2 class="car-item-title">2016 - Lexus RX200t</h2>
                             <p class="car-item-price">$25,000</p>
-                            <hr/>
+                            <hr />
                             <p class="m-0">
                                 <span class="car-item-badge">SUV</span>
                                 <span class="car-item-badge">Electric</span>
@@ -820,4 +816,9 @@
         </section>
         <!--/ New Cars -->
     </main>
-@endsection
+
+    <x-slot:footerLinks>
+        <a href="#">Link 3</a>
+        <a href="#">Link 4</a>
+    </x-slot:footerLinks>
+</x-app-layout>
