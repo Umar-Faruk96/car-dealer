@@ -1,7 +1,7 @@
 <header class="navbar">
     <div class="container navbar-content">
-        <a href="/" class="logo-wrapper">
-            <img src="/img/logoipsum-265.svg" alt="Logo"/>
+        <a href="{{ route('home') }}" class="logo-wrapper">
+            <img src="/img/logoipsum-265.svg" alt="Logo" />
         </a>
         <button class="btn btn-default btn-navbar-toggle">
             <svg
@@ -20,7 +20,7 @@
             </svg>
         </button>
         <div class="navbar-auth">
-            <a href="/add_new.html" class="btn btn-add-new-car">
+            <a href="{{ route('car.create') }}" class="btn btn-add-new-car">
                 <svg
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
@@ -58,7 +58,7 @@
                 </a>
                 <ul class="submenu">
                     <li>
-                        <a href="my_cars.html">My Cars</a>
+                        <a href="{{ route('car.index') }}">My Cars</a>
                     </li>
                     <li>
                         <a href="watchlist.html">My Favourite Cars</a>
@@ -70,7 +70,7 @@
                     </li>
                 </ul>
             </div>
-            <a href="/signup.html" class="btn btn-primary btn-signup">
+            <a href="{{ route('signup.create') }}" class="btn btn-primary btn-signup">
                 <svg
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
@@ -88,7 +88,7 @@
 
                 Signup
             </a>
-            <a href="/login.html" class="btn btn-login flex items-center">
+            <a href="{{ route('login.create') }}" class="btn btn-login flex items-center">
                 <svg
                         style="width: 18px; fill: currentColor; margin-right: 4px"
                         viewBox="0 0 1024 1024"

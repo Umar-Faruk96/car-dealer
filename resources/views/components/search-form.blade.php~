@@ -306,16 +306,16 @@
                     </select>
                 </div>
                 <div>
-                    <input type="number" placeholder="Year From" name="year_from" />
+                    <input type="number" placeholder="Year From" name="year_from"/>
                 </div>
                 <div>
-                    <input type="number" placeholder="Year To" name="year_to" />
+                    <input type="number" placeholder="Year To" name="year_to"/>
                 </div>
                 <div>
-                    <input type="number" placeholder="Price From" name="price_from" />
+                    <input type="number" placeholder="Price From" name="price_from"/>
                 </div>
                 <div>
-                    <input type="number" placeholder="Price To" name="price_to" />
+                    <input type="number" placeholder="Price To" name="price_to"/>
                 </div>
                 <div>
                     <select name="fuel_type_id">
