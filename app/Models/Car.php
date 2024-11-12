@@ -2,7 +2,12 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\{Factories\HasFactory, Model, Relations\HasMany, Relations\HasOne, SoftDeletes};
+use Illuminate\Database\Eloquent\{Factories\HasFactory,
+	Model,
+	Relations\BelongsTo,
+	Relations\HasMany,
+	Relations\HasOne,
+	SoftDeletes};
 
 class Car extends Model
 {
@@ -41,5 +46,10 @@ class Car extends Model
 	public function images() : HasMany
 	{
 		return $this->hasMany(CarImage::class);
+	}
+	
+	public function carType() : BelongsTo
+	{
+		return $this->belongsTo(CarType::class);
 	}
 }
