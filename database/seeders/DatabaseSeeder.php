@@ -20,5 +20,9 @@ class DatabaseSeeder extends Seeder
 			'name' => 'Omor Faruk Sheikh Raihan',
 			'email' => 'omor@faruk.me',
 		]);
+		
+		$this->call([
+			UserSeeder::class
+		]);
 	}
 }
