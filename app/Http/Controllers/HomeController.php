@@ -10,14 +10,8 @@ class HomeController
 {
 	public function index() : View
 	{
-		$makers = Maker::factory()
-			->count(7)
-			->sequence(['name' => 'Lexus'], ['name' => 'BMW'], ['name' => 'Mercedes'], ['name' => 'Tesla'], ['name' => 'Chevrolet'], ['name' => 'Honda'], ['name' => 'Volkswagen'])
-			->create();
-		dump($makers);
-		
-		// $users = User::factory()->count(9)->create();
-		// dump($users );
+		Maker::factory()->count(2)
+			->hasModels(2)->create();
 		
 		return view('home.index');
 	}

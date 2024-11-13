@@ -2,9 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\{Factories\HasFactory, Model, Relations\HasMany};
+use Illuminate\Database\Eloquent\{Factories\HasFactory, Model as EloquentModel, Relations\HasMany};
 
-class Maker extends Model
+class Maker extends EloquentModel
 {
 	use HasFactory;
 	
