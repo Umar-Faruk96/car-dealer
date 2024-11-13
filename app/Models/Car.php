@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\{Factories\HasFactory,
 	Model,
 	Relations\BelongsTo,
+	Relations\BelongsToMany,
 	Relations\HasMany,
 	Relations\HasOne,
 	SoftDeletes};
@@ -51,5 +52,10 @@ class Car extends Model
 	public function carType() : BelongsTo
 	{
 		return $this->belongsTo(CarType::class);
+	}
+	
+	public function favouredUsers() : BelongsToMany
+	{
+		return $this->belongsToMany(User::class, 'favourite_cars');
 	}
 }

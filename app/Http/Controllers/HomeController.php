@@ -3,16 +3,21 @@
 namespace App\Http\Controllers;
 
 
-use App\Models\Car;
+use App\Models\{Car, User};
 use Illuminate\Contracts\View\View;
 
 class HomeController
 {
 	public function index() : View
 	{
-		$car = Car::find(1);
+		$car = Car::find(3);
+		dump($car->favouredUsers);
 		
-		$car->images()->create(['image_path' => 'home', 'position' => 2]);
+		$user = User::find(1);
+		dump($user->favoriteCars);
+		// $user->favoriteCars()->attach($car);
+		// $user->favoriteCars()->sync([1, 2]);
+		// $user->favoriteCars()->detach($car);
 		
 		return view('home.index');
 	}
