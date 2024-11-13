@@ -17,7 +17,7 @@ class ModelFactory extends Factory
 	public function definition() : array
 	{
 		return [
-			'name' => fake()->name(),
+			'name' => fake()->randomElement(['Corolla', 'Civic', 'Camry', 'Prius', 'Vitz', 'WRV', 'i30', 'i40', 'i60', 'Carina', 'Prime']),
 		];
 	}
 }
