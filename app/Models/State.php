@@ -2,10 +2,12 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\{Model, Relations\HasMany};
+use Illuminate\Database\Eloquent\{Factories\HasFactory, Model, Relations\HasMany};
 
 class State extends Model
 {
+	use HasFactory;
+	
 	public $timestamps = false;
 	
 	
