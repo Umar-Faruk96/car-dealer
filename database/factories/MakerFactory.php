@@ -17,7 +17,7 @@ class MakerFactory extends Factory
 	public function definition() : array
 	{
 		return [
-			'name' => fake()->company(),
+			'name' => fake()->randomElement(['Ford', 'Honda', 'Toyota', 'Nissan', 'Chevrolet', 'Volkswagen', 'Hyundai', 'Kia', 'Mazda', 'Subaru']),
 		];
 	}
 }
