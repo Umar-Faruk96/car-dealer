@@ -17,8 +17,8 @@ class StateFactory extends Factory
 	public function definition() : array
 	{
 		return [
-			// 'name' => fake()->randomElement(['California', 'Kansas', 'Ohio', 'Oregon', 'Tennessee', 'Texas', 'Washington', 'Wisconsin', 'Wyoming', 'New York']),
-			'name' => fake()->state(),
+			'name' => fake()->randomElement(['California', 'Texas', 'Florida', 'New York', 'Illinois', 'Pennsylvania', 'Ohio', 'Georgia', 'North Carolina', 'Michigan']),
+			// 'name' => fake()->state(),
 		];
 	}
 }
