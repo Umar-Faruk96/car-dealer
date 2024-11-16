@@ -9,4 +9,5 @@ Route::get('/signup', [SignupController::class, 'create'])->name('signup.create'
 Route::get('/login', [LoginController::class, 'create'])->name('login.create');
 
 Route::get('car/search', [CarController::class, 'search'])->name('car.search');
+Route::get('car/watchlist', [CarController::class, 'watchlist'])->name('car.watchlist');
 Route::resource('car', CarController::class);

@@ -36,7 +36,7 @@ class User extends Authenticatable
 		'remember_token',
 	];
 	
-	public function favoriteCars() : BelongsToMany
+	public function favouriteCars() : BelongsToMany
 	{
 		return $this->belongsToMany(Car::class, 'favourite_cars');
 	}
