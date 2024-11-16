@@ -14,7 +14,7 @@ class CarController extends Controller
 	 */
 	public function index() : View
 	{
-		$carsOfUser = User::inRandomOrder()->first()->cars->sortByDesc('created_at')->take(5);
+		$carsOfUser = User::with(['cars', 'cars.images', 'cars.features', 'cars.maker', 'cars.model', 'cars.carType', 'cars.fuelType', 'cars.city', 'cars.owner'])->inRandomOrder()->first()->cars->sortByDesc('created_at')->take(5);
 		
 		return view('cars.car.index', compact('carsOfUser'));
 	}

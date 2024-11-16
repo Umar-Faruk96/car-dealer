@@ -10,7 +10,11 @@ class HomeController
 {
 	public function index() : View
 	{
-		$cars = Car::where('published_at', '<', now())->orderBy('published_at', 'desc')->limit(30)->get();
+		$cars = Car::with(['primaryImage', 'maker', 'model', 'carType', 'fuelType', 'city'])
+			->where('published_at', '<', now())
+			->orderBy('published_at', 'desc')
+			->limit(30)
+			->get();
 		
 		return view('home.index', [
 			'cars' => $cars]);
