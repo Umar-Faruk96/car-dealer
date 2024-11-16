@@ -1,7 +1,7 @@
 @props(['car'])
 
 <div {{ $attributes->class(['car-item card']) }}>
-    <a href="{{ route('car.show', 1) }}">
+    <a href="{{ route('car.show', $car) }}">
         <img src="{{ $car->primaryImage->image_path }}" alt="{{ $car->description }}" class="car-item-img rounded-t" />
     </a>
     <div class="p-medium">
