@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Car;
+use App\Models\User;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
 
@@ -13,7 +14,9 @@ class CarController extends Controller
 	 */
 	public function index() : View
 	{
-		return view('cars.car.index');
+		$carsOfUser = User::inRandomOrder()->first()->cars->sortByDesc('created_at')->take(5);
+		
+		return view('cars.car.index', compact('carsOfUser'));
 	}
 	
 	/**

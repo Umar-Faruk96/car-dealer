@@ -1,6 +1,6 @@
-@props(['pageTitle' => ''])
+@props(['pageTitle' => '', 'bodyClass' => ''])
 
-<x-base-layout :$pageTitle>
+<x-base-layout :$pageTitle :$bodyClass>
     <x-partials.header />
 
     {{ $slot }}
