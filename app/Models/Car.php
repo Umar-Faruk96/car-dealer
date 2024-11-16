@@ -3,7 +3,6 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\{Factories\HasFactory,
-	Model,
 	Relations\BelongsTo,
 	Relations\BelongsToMany,
 	Relations\HasMany,
