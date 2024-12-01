@@ -71,10 +71,9 @@ class CarController extends Controller
 	{
 		$publishedCars = Car::with(['primaryImage', 'maker', 'model', 'carType', 'fuelType', 'city'])
 			->where('published_at', '<', now());
-		$carCount = $publishedCars->count();
-		$cars = $publishedCars->limit(15)->get()->sortByDesc('published_at');
+		$cars = $publishedCars->paginate(5);
 		
-		return view('cars.car.search', compact('cars', 'carCount'));
+		return view('cars.car.search', compact('cars'));
 	}
 	
 	public function watchlist() : View
