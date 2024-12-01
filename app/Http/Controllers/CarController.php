@@ -14,7 +14,7 @@ class CarController extends Controller
 	 */
 	public function index() : View
 	{
-		$carsOfUser = User::with(['cars', 'cars.images', 'cars.features', 'cars.maker', 'cars.model', 'cars.carType', 'cars.fuelType', 'cars.city', 'cars.owner'])->inRandomOrder()->first()->cars->sortByDesc('created_at')->take(5);
+		$carsOfUser = User::inRandomOrder()->first()->cars()->with(['primaryImage', 'maker', 'model'])->get()->sortByDesc('created_at')->take(5);
 		
 		return view('cars.car.index', compact('carsOfUser'));
 	}
@@ -69,7 +69,8 @@ class CarController extends Controller
 	
 	public function search() : View
 	{
-		$publishedCars = Car::where('published_at', '<', now());
+		$publishedCars = Car::with(['primaryImage', 'maker', 'model', 'carType', 'fuelType', 'city'])
+			->where('published_at', '<', now());
 		$carCount = $publishedCars->count();
 		$cars = $publishedCars->limit(15)->get()->sortByDesc('published_at');
 		
@@ -78,8 +79,9 @@ class CarController extends Controller
 	
 	public function watchlist() : View
 	{
-		$favouriteCars = User::inRandomOrder()->first()->favouriteCars()->get()->take(15);
-		// $favouriteCars = User::find(4)->favouriteCars()->get()->take(5);
+		// $favouriteCars = User::inRandomOrder()->first()->favouriteCars()->get()->take(15);
+		$favouriteCars = User::find(4)->favouriteCars()->with(['primaryImage', 'maker', 'model', 'carType', 'fuelType', 'city'])
+			->get()->take(15);
 		
 		return view('cars.car.watchlist', compact('favouriteCars'));
 	}
