@@ -440,6 +440,7 @@
                         <x-car-item :$car />
                     @endforeach
                 </div>
+                {{ $cars->onEachSide(1)->links() }}
             </div>
         </section>
         <!--/ New Cars -->
