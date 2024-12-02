@@ -14,7 +14,7 @@ class CarController extends Controller
 	 */
 	public function index() : View
 	{
-		$carsOfUser = User::inRandomOrder()->first()->cars()->with(['primaryImage', 'maker', 'model'])->get()->sortByDesc('created_at')->take(5);
+		$carsOfUser = User::inRandomOrder()->first()->cars()->with(['primaryImage', 'maker', 'model'])->paginate(10);
 		
 		return view('cars.car.index', compact('carsOfUser'));
 	}
@@ -71,7 +71,7 @@ class CarController extends Controller
 	{
 		$publishedCars = Car::with(['primaryImage', 'maker', 'model', 'carType', 'fuelType', 'city'])
 			->where('published_at', '<', now());
-		$cars = $publishedCars->paginate(5);
+		$cars = $publishedCars->paginate(9);
 		
 		return view('cars.car.search', compact('cars'));
 	}
@@ -80,7 +80,7 @@ class CarController extends Controller
 	{
 		// $favouriteCars = User::inRandomOrder()->first()->favouriteCars()->get()->take(15);
 		$favouriteCars = User::find(4)->favouriteCars()->with(['primaryImage', 'maker', 'model', 'carType', 'fuelType', 'city'])
-			->get()->take(15);
+			->paginate(10);
 		
 		return view('cars.car.watchlist', compact('favouriteCars'));
 	}

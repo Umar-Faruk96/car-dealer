@@ -41,7 +41,7 @@
 
                         <!-- Find a car form -->
                         <section class="find-a-car">
-                            <form action="/s.html" method="GET" class="find-a-car-form card flex p-medium">
+                            <form action="" method="GET" class="find-a-car-form card flex p-medium">
                                 <div class="find-a-car-inputs">
                                     <div class="form-group">
                                         <label class="mb-medium">Maker</label>
@@ -416,7 +416,8 @@
                                 <x-car-item :$car />
                             @endforeach
                         </div>
-                        {{ $cars->onEachSide(1)->links('cars.pagination') }}
+
+                        {{ $cars->onEachSide(1)->links() }}
                     </div>
                 </div>
             </div>
