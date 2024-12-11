@@ -83,7 +83,7 @@ document.addEventListener("DOMContentLoaded", function () {
             const a = document.createElement("a");
             a.classList.add("car-form-image-preview");
             a.innerHTML = `
-        <img src="${url}" alt=""/>
+        <img src="${url}" />
       `;
             return a;
         }
