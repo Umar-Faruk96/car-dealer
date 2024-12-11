@@ -3,7 +3,11 @@
 namespace App\Http\Controllers;
 
 
-use App\Models\{Car, CarType, City, FuelType, Maker, Model, State};
+use App\Models\Car;
+use App\Models\City;
+use App\Models\Maker;
+use App\Models\Model;
+use App\Models\State;
 use Illuminate\Contracts\View\View;
 
 class HomeController
@@ -17,10 +21,9 @@ class HomeController
 		$models = Model::all()->sortBy('name');
 		$states = State::all()->sortBy('name');
 		$cities = City::all()->sortBy('name');
-		$carTypes = CarType::all()->sortBy('name');
-		$fuelTypes = FuelType::all()->sortBy('name');
+		$ca
 		
 		return view('home.index', [
-			'cars' => $cars, 'makers' => $makers, 'models' => $models, 'states' => $states, 'cities' => $cities, 'carTypes' => $carTypes, 'fuelTypes' => $fuelTypes]);
+			'cars' => $cars, 'makers' => $makers, 'models' => $models, 'states' => $states, 'cities' => $cities]);
 	}
 }

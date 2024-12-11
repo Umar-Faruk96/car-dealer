@@ -130,9 +130,10 @@
                                         <label class="mb-medium">Fuel Type</label>
                                         <select name="fuel_type_id">
                                             <option value="">Fuel Type</option>
-                                            @foreach($fuelTypes as $fuelType)
-                                                <x-fuel-type value="{{$fuelType->id}}">{{$fuelType->name}}</x-fuel-type>
-                                            @endforeach
+                                            <option value="2">Diesel</option>
+                                            <option value="3">Electric</option>
+                                            <option value="1">Gasoline</option>
+                                            <option value="4">Hybrid</option>
                                         </select>
                                     </div>
                                 </div>

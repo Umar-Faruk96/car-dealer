@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\{User, Car, CarType, City, FuelType, Maker, Model, State};
+use App\Models\{User, Car, City, FuelType, Maker, Model, State};
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
 
@@ -75,10 +75,9 @@ class CarController extends Controller
 		$models = Model::all()->sortBy('name');
 		$states = State::all()->sortBy('name');
 		$cities = City::all()->sortBy('name');
-		$carTypes = CarType::all()->sortBy('name');
 		$fuelTypes = FuelType::all()->sortBy('name');
 		
-		return view('cars.car.search', compact('cars', 'makers', 'models', 'states', 'cities', 'carTypes', 'fuelTypes'));
+		return view('cars.car.search', compact('cars', 'makers', 'models', 'states', 'cities', 'fuelTypes'));
 	}
 	
 	public function watchlist() : View
