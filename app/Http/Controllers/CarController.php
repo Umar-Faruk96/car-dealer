@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\{User, Car, CarType, City, FuelType, Maker, Model, State};
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
+use Illuminate\Database\Eloquent\Builder;
 
 class CarController extends Controller
 {
@@ -66,19 +67,35 @@ class CarController extends Controller
 		//
 	}
 	
-	public function search() : View
+	public function search(Request $request) : View
 	{
-		$publishedCars = Car::with(['primaryImage', 'maker', 'model', 'carType', 'fuelType', 'city'])
-			->where('published_at', '<', now());
-		$cars = $publishedCars->paginate(9);
+		$searchedCars = Car::with(['primaryImage', 'maker', 'model', 'carType', 'fuelType', 'city'])
+			->where([
+				['maker_id', $request->maker_id],
+				['model_id', $request->model_id],
+				['car_type_id', $request->car_type_id],
+				['fuel_type_id', $request->fuel_type_id],
+				['city_id', $request->city_id]
+			])
+			->whereHas('city', function(Builder $query) use ($request) {
+				$query->where('state_id', $request->state_id);
+			})
+			->whereBetween('year', [$request->year_from, $request->year_to])
+			->whereBetween('price', [$request->price_from, $request->price_to]);
+		
+		$cars = $searchedCars->paginate(9);
 		$makers = Maker::all()->sortBy('name');
-		$models = Model::all()->sortBy('name');
+		$models = Model::with('maker')->get()->sortBy('name');
 		$states = State::all()->sortBy('name');
-		$cities = City::all()->sortBy('name');
+		$cities = City::with('state')->get()->sortBy('name');
 		$carTypes = CarType::all()->sortBy('name');
 		$fuelTypes = FuelType::all()->sortBy('name');
+		$yearForm = $request->year_from;
+		$yearTo = $request->year_to;
+		$priceForm = $request->price_from;
+		$priceTo = $request->price_to;
 		
-		return view('cars.car.search', compact('cars', 'makers', 'models', 'states', 'cities', 'carTypes', 'fuelTypes'));
+		return view('cars.car.search', compact('cars', 'makers', 'models', 'states', 'cities', 'carTypes', 'fuelTypes', 'yearForm', 'yearTo', 'priceForm', 'priceTo'));
 	}
 	
 	public function watchlist() : View

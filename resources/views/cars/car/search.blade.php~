@@ -46,45 +46,84 @@
                                     <div class="form-group">
                                         <label class="mb-medium">Maker</label>
                                         <select id="makerSelect" name="maker_id">
-                                            <option value="">Maker</option>
-                                            @foreach($makers as $maker)
-                                                <x-maker value="{{$maker->id}}">{{$maker->name}}</x-maker>
-                                            @endforeach
+                                            @if($cars->count() > 1)
+                                                @foreach($cars->maker as $maker)
+                                                    <x-maker value="{{$maker->id}}">{{$maker->name}}</x-maker>
+                                                @endforeach
+                                            @elseif($cars->count() == 1)
+                                                <x-maker
+                                                        value="{{$cars->first()->maker->id}}">{{$cars->first()->maker->name}}</x-maker>
+                                            @else
+                                                <option value="">Maker</option>
+                                                @foreach($makers as $maker)
+                                                    <x-maker value="{{$maker->id}}">{{$maker->name}}</x-maker>
+                                                @endforeach
+                                            @endif
                                         </select>
                                     </div>
+
                                     <div class="form-group">
                                         <label class="mb-medium">Model</label>
                                         <select id="modelSelect" name="model_id">
-                                            <option value="">Model</option>
-                                            @foreach($models as $model)
-                                                <x-model value="{{ $model->id }}"
-                                                         data-parent="{{ $model->maker_id }}">{{ $model->name }}</x-model>
-                                            @endforeach
+                                            @if($cars->count() > 1)
+                                                @foreach($cars->model as $model)
+                                                    <x-model value="{{ $model->id }}"
+                                                             data-parent="{{ $model->maker_id }}">{{ $model->name }}</x-model>
+                                                @endforeach
+                                            @elseif($cars->count() == 1)
+                                                <x-model value="{{ $cars->first()->model->id }}"
+                                                         data-parent="{{ $cars->first()->model->maker_id }}">{{ $cars->first()->model->name }}</x-model>
+                                            @else
+                                                <option value="">Model</option>
+                                                @foreach($models as $model)
+                                                    <x-model value="{{ $model->id }}"
+                                                             data-parent="{{ $model->maker_id }}">{{ $model->name }}</x-model>
+                                                @endforeach
+                                            @endif
                                         </select>
                                     </div>
+
                                     <div class="form-group">
                                         <label class="mb-medium">Type</label>
                                         <select name="car_type_id">
-                                            <option value="">Type</option>
-                                            @foreach($carTypes as $carType)
-                                                <x-car-type value="{{$carType->id}}">{{$carType->name}}</x-car-type>
-                                            @endforeach
+                                            @if($cars->count() > 1)
+                                                @foreach($cars->carType as $carType)
+                                                    <x-car-type
+                                                            value="{{ $carType->id }}">{{ $carType->name }}</x-car-type>
+                                                @endforeach
+                                            @elseif($cars->count() == 1)
+                                                <x-car-type
+                                                        value="{{ $cars->first()->carType->id }}">{{ $cars->first()->carType->name }}</x-car-type>
+                                            @else
+                                                <option value="">Type</option>
+                                                @foreach($carTypes as $carType)
+                                                    <x-car-type value="{{$carType->id}}">{{$carType->name}}</x-car-type>
+                                                @endforeach
+                                            @endif
+
                                         </select>
                                     </div>
+
                                     <div class="form-group">
                                         <label class="mb-medium">Year</label>
                                         <div class="flex gap-1">
-                                            <input type="number" placeholder="Year From" name="year_from" />
-                                            <input type="number" placeholder="Year To" name="year_to" />
+                                            <input type="number" value="{{ $yearForm }}" placeholder="Year From"
+                                                   name="year_from" />
+                                            <input type="number" value="{{ $yearTo }}" placeholder="Year To"
+                                                   name="year_to" />
                                         </div>
                                     </div>
+
                                     <div class="form-group">
                                         <label class="mb-medium">Price</label>
                                         <div class="flex gap-1">
-                                            <input type="number" placeholder="Price From" name="price_from" />
-                                            <input type="number" placeholder="Price To" name="price_to" />
+                                            <input type="number" value="{{ $priceForm }}"
+                                                   placeholder="Price From" name="price_from" />
+                                            <input type="number" value="{{ $priceTo }}" placeholder="Price To"
+                                                   name="price_to" />
                                         </div>
                                     </div>
+
                                     <div class="form-group">
                                         <label class="mb-medium">Mileage</label>
                                         <div class="flex gap-1">
@@ -107,33 +146,53 @@
                                             </select>
                                         </div>
                                     </div>
+
                                     <div class="form-group">
                                         <label class="mb-medium">State</label>
                                         <select id="stateSelect" name="state_id">
-                                            <option value="">State/Region</option>
-                                            @foreach($states as $state)
-                                                <x-state value="{{ $state->id }}">{{ $state->name }}</x-state>
-                                            @endforeach
+                                            @if($cars->count() > 1)
+                                                @foreach($cars->city->state as $state)
+                                                    <x-state value="{{$state->id}}">{{$state->name}}</x-state>
+                                                @endforeach
+                                            @elseif($cars->count() == 1)
+                                                <x-state
+                                                        value="{{$cars->first()->city->state->id}}">{{$cars->first()->city->state->name}}</x-state>
+                                            @else
+                                                <option value="">State/Region</option>
+                                                @foreach($states as $state)
+                                                    <x-state value="{{ $state->id }}">{{ $state->name }}</x-state>
+                                                @endforeach
+                                            @endif
                                         </select>
                                     </div>
+
                                     <div class="form-group">
                                         <label class="mb-medium">City</label>
                                         <select id="citySelect" name="city_id">
-                                            <option value="">City</option>
-                                            @foreach($cities as $city)
-                                                <x-city value="{{ $city->id }}"
-                                                        data-parent="{{ $city->state_id }}">{{ $city->name }}</x-city>
-                                            @endforeach
+                                            @if($cars->count() > 1)
+                                                @foreach($cars->city as $city)
+                                                    <x-city value="{{ $city->id }}"
+                                                            data-parent="{{ $city->state_id }}">{{ $city->name }}</x-city>
+                                                @endforeach
+                                            @elseif($cars->count() == 1)
+                                                <x-city value="{{ $cars->first()->city->id }}"
+                                                        data-parent="{{ $cars->first()->city->state_id }}">{{ $cars->first()->city->name }}</x-city>
+                                            @else
+                                                <option value="">City</option>
+                                                @foreach($cities as $city)
+                                                    <x-city value="{{ $city->id }}"
+                                                            data-parent="{{ $city->state_id }}">{{ $city->name }}</x-city>
+                                                @endforeach
+                                            @endif
                                         </select>
                                     </div>
                                     <div class="form-group">
                                         <label class="mb-medium">Fuel Type</label>
                                         <select name="fuel_type_id">
                                             <option value="">Fuel Type</option>
-                                            <option value="2">Diesel</option>
-                                            <option value="3">Electric</option>
-                                            <option value="1">Gasoline</option>
-                                            <option value="4">Hybrid</option>
+                                            @foreach($fuelTypes as $fuelType)
+                                                <x-fuel-type value="{{$fuelType->id}}">{{$fuelType->name}}</x-fuel-type>
+                                            @endforeach
                                         </select>
                                     </div>
                                 </div>
